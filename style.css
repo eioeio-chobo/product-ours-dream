@@ -65,3 +65,36 @@ h1 {
 #generate-button:active {
   transform: translateY(0);
 }
+
+.easter-egg {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+}
+
+.easter-egg input {
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(27, 27, 31, 0.2);
+  background: #ffffffcc;
+  color: #1b1b1f;
+  font-family: inherit;
+  box-shadow: 0 10px 20px rgba(27, 27, 31, 0.12);
+  width: min(200px, 60vw);
+}
+
+.easter-egg input:focus {
+  outline: 2px solid #1b1b1f;
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
