@@ -4,12 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Random Emoji Generator</title>
-  <link href='/style.css' rel='stylesheet'>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="/style.css" rel="stylesheet">
 </head>
 <body>
-  <h1>Random Emoji Generator</h1>
-  <div id="emoji-container"></div>
-  <button id="generate-button">Generate Emoji</button>
+  <main class="card">
+    <h1>Random Emoji Generator</h1>
+    <p class="subtitle">Press the button (or hit space) for a surprise.</p>
+    <div id="emoji-container" aria-live="polite"></div>
+    <button id="generate-button" type="button">Generate Emoji</button>
+  </main>
   <script defer type="text/javascript" src="/main.js"></script>
 </body>
 </html>

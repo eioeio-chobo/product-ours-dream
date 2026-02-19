@@ -1,1 +1,32 @@
-const emojiContainer = document.getElementById('emoji-container');\nconst generateButton = document.getElementById('generate-button');\n\nconst emojis = ['\ud83d\ude00', '\ud83d\ude01', '\ud83d\ude02', '\ud83d\ude03', '\ud83d\ude04', '\ud83d\ude05', '\ud83d\ude06', '\ud83d\ude09', '\ud83d\ude0a', '\ud83d\ude0b', '\ud83d\ude0c', '\ud83d\ude0d', '\ud83d\ude0e', '\ud83d\ude0f', '\ud83d\ude12', '\ud83d\ude13', '\ud83d\ude14', '\ud83d\ude15', '\ud83d\ude16', '\ud83d\ude18', '\ud83d\ude1a', '\ud83d\ude1c', '\ud83d\ude1d', '\ud83d\ude1e', '\ud83d\ude20', '\ud83d\ude21', '\ud83d\ude22', '\ud83d\ude23', '\ud83d\ude24', '\ud83d\ude25', '\ud83d\ude28', '\ud83d\ude29', '\ud83d\ude2a', '\ud83d\ude2b', '\ud83d\ude2d', '\ud83d\ude30', '\ud83d\ude31', '\ud83d\ude32', '\ud83d\ude33', '\ud83d\ude35', '\ud83d\ude37', '\ud83d\ude41', '\ud83d\ude42', '\ud83d\ude43', '\ud83d\ude44', '\ud83c\udf89', '\ud83c\udf8a', '\ud83c\udf81', '\ud83c\udf82'];\n\nfunction generateRandomEmoji() {\n  const randomIndex = Math.floor(Math.random() * emojis.length);\n  emojiContainer.textContent = emojis[randomIndex];\n}\n\ngenerateButton.addEventListener('click', generateRandomEmoji);\n\n// Generate an initial emoji on page load\ngenerateRandomEmoji();\n
+const emojiContainer = document.getElementById("emoji-container");
+const generateButton = document.getElementById("generate-button");
+
+const emojis = [
+  "😀", "😁", "😂", "😃", "😄", "😅", "😆", "😉",
+  "😊", "😋", "😌", "😍", "😎", "😏", "😒", "😓",
+  "😔", "😕", "😖", "😘", "😚", "😜", "😝", "😞",
+  "😠", "😡", "😢", "😣", "😤", "😥", "😨", "😩",
+  "😪", "😫", "😭", "😰", "😱", "😲", "😳", "😵",
+  "😷", "🙁", "🙂", "🙃", "🙄", "🎉", "🎊", "🎁",
+  "🎂", "✨", "🚀", "🌈", "🍀", "🌟", "🔥", "💫"
+];
+
+function generateRandomEmoji() {
+  const randomIndex = Math.floor(Math.random() * emojis.length);
+  emojiContainer.textContent = emojis[randomIndex];
+  emojiContainer.classList.remove("pop");
+  requestAnimationFrame(() => {
+    emojiContainer.classList.add("pop");
+  });
+}
+
+generateButton.addEventListener("click", generateRandomEmoji);
+
+document.addEventListener("keydown", (event) => {
+  if (event.code === "Space" || event.code === "Enter") {
+    event.preventDefault();
+    generateRandomEmoji();
+  }
+});
+
+generateRandomEmoji();
